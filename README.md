@@ -32,7 +32,7 @@ Exemplos:
 ```bash
 python segment.py --input samples/galaxy.tif --method hsv --target blue
 python segment.py --input samples/cameraman.tif --method kmeans --k 2 --target green
-python segment.py --input samples/tape.png --method hsv --target green
+python segment.py --input samples/cena_complexa.jpg --method kmeans --k 3 --target green
 python segment.py --input samples/carpark.png --method kmeans --k 3 --target blue
 ```
 
@@ -53,8 +53,19 @@ Converte a imagem para o espaço HSV (Hue, Saturation, Value) e aplica um interv
 - `S` (saturação) baixa pode incluir tons acinzentados — em ambientes com baixa saturação (neblina, sombra) é preciso diminuir `smin`.
 - `V` controla a luminosidade; para regiões muito escuras aumente `vmin` com cuidado.
 
-### Segmentação por K-Means
+**Observações Gerais sobre o HSV:**
+- Vantagem: Rápido e eficaz para cores bem definidas
+- Funcionamento: Converte para espaço HSV e aplica limites de cor
+- Ajustes: Permite customização dos ranges H, S, V
+- Pós-processamento: Operações morfológicas para reduzir ruído
+
+### Segmentação por K-Means (Agrupamento)
 Agrupa pixels em `k` clusters (em HSV neste projeto). Calcula o centróide de cada cluster e escolhe aquele cujo centróide é mais próximo da cor alvo (verde/azul) em termos de distância euclidiana em HSV. Essa técnica é útil quando a cor alvo tem variação ou a imagem tem ruído, mas depende fortemente de escolha de `k` e da inicialização.
+
+**Observações Gerais sobre o K-Means:**
+Vantagem: Não depende de ranges fixos, adapta-se à imagem
+Funcionamento: Agrupa pixels similares e seleciona cluster mais próximo da cor alvo
+Flexibilidade: Número de clusters configurável (--k)
 
 ## Limitações conhecidas
 - Iluminação e sombras podem deslocar valores HSV e prejudicar a segmentação.
