@@ -7,7 +7,7 @@ Este repositório contém um mini-aplicativo de linha de comando em Python que i
 - `segment.py` — script principal (CLI).
 - `README.md` — instruções, raciocínio e observações.
 - `requirements.txt` — dependências (opencv-python, numpy).
-- `samples/` — pasta com 5 imagens de exemplo.
+- `samples/` — pasta com 6 imagens de exemplo.
 - `outputs/` — gerado pelo script; contém `*_mask.png` e `*_overlay.png`.
 
 ## Como instalar
