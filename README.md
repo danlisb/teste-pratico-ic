@@ -2,8 +2,6 @@
 
 Este repositório contém um mini-aplicativo de linha de comando em Python que implementa duas técnicas simples de segmentação de imagem: segmentação por cor em HSV e segmentação por agrupamento (K-Means).
 
-
-
 ## Estrutura do repositório
 
 - `segment.py` — script principal (CLI).
@@ -30,10 +28,15 @@ pip install -r requirements.txt
 Exemplos:
 
 ```bash
-python segment.py --input samples/galaxy.tif --method hsv --target blue
-python segment.py --input samples/cameraman.tif --method kmeans --k 2 --target green
-python segment.py --input samples/cena_complexa.jpg --method kmeans --k 3 --target green
-python segment.py --input samples/carpark.png --method kmeans --k 3 --target blue
+python segment.py --input samples/galaxy.tif --method kmeans --k 2 --target blue
+python segment.py --input samples/cameraman.tif --method kmeans --k 2 --target blue 
+python segment.py --input samples/tape.png --method kmeans --k 3 --target green
+python segment.py --input samples/backyard.png --method hsv --target green
+python segment.py --input samples/backyard.png --method hsv --target blue 
+python segment.py --input samples/carpark.png --method kmeans --k 3 --target green
+python segment.py --input samples/carpark.png --method hsv --target green
+python segment.py --input samples/ceu.jpg --method hsv --target blue --hmin 10 --hmax 130
+python segment.py --input samples/ceu.jpg --method kmeans --k 2 --target blue
 ```
 
 Saídas geradas em `outputs/`:
