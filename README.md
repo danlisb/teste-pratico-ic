@@ -66,9 +66,9 @@ Converte a imagem para o espaço HSV (Hue, Saturation, Value) e aplica um interv
 Agrupa pixels em `k` clusters (em HSV neste projeto). Calcula o centróide de cada cluster e escolhe aquele cujo centróide é mais próximo da cor alvo (verde/azul) em termos de distância euclidiana em HSV. Essa técnica é útil quando a cor alvo tem variação ou a imagem tem ruído, mas depende fortemente de escolha de `k` e da inicialização.
 
 **Observações Gerais sobre o K-Means:**
-Vantagem: Não depende de ranges fixos, adapta-se à imagem
-Funcionamento: Agrupa pixels similares e seleciona cluster mais próximo da cor alvo
-Flexibilidade: Número de clusters configurável (--k)
+- Vantagem: Não depende de ranges fixos, adapta-se à imagem
+- Funcionamento: Agrupa pixels similares e seleciona cluster mais próximo da cor alvo
+- Flexibilidade: Número de clusters configurável (--k)
 
 ## Limitações conhecidas
 - Iluminação e sombras podem deslocar valores HSV e prejudicar a segmentação.
