@@ -44,7 +44,7 @@ DEFAULT_RANGES = {
 
 
 def load_image(path):
-    """Carrega uma imagem do disco com verificação de erro"""
+    """Carrega uma imagem com verificação de erro"""
     img = cv2.imread(path, cv2.IMREAD_COLOR)
     if img is None:
         raise FileNotFoundError(f'Imagem não encontrada: {path}')
